@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 // As a basic setup, import your same slice reducers
-import { listSlice } from "../features/listSlice";
+import { ListSlice } from "../features/ListSlice";
 
 export function renderWithProviders(
   ui,
@@ -11,7 +11,7 @@ export function renderWithProviders(
     preloadedState = {},
     // Automatically create a store instance if no store was passed in
     store = configureStore({
-      reducer: { listReducers: listSlice.reducer },
+      reducer: { listReducers: ListSlice.reducer },
       preloadedState,
     }),
     ...renderOptions

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+export const initialState = {
   value: [
     {
       id: `${new Date().getSeconds()}`,
@@ -10,15 +10,11 @@ const initialState = {
   ],
 };
 
-export const listSlice = createSlice({
+export const ListSlice = createSlice({
   name: "listReducers",
   initialState,
-  reducers: {
-    addItem: (state, action) => {
-      state.value += 1;
-    },
-  },
+  reducers: {},
 });
 
-export const { addItem } = listSlice.actions;
-export default listSlice.reducer;
+export const {} = ListSlice.actions;
+export default ListSlice.reducer;
