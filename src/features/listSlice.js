@@ -13,8 +13,12 @@ export const initialState = {
 export const ListSlice = createSlice({
   name: "listReducers",
   initialState,
-  reducers: {},
+  reducers: {
+    testAddReducer: (state, action) => {
+      state.value.push(action.payload);
+    },
+  },
 });
 
-export const {} = ListSlice.actions;
+export const { testAddReducer } = ListSlice.actions;
 export default ListSlice.reducer;
