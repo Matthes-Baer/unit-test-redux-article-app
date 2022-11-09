@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { testAddReducer } from "../features/ListSlice";
 
 const List = () => {
   const listState = useSelector((state) => state.listReducers.value);
@@ -19,7 +19,19 @@ const List = () => {
           );
         })}
       </ul>
-      <button>This button can add a new entry to the list</button>
+      <button
+        onClick={() =>
+          dispatch(
+            testAddReducer({
+              id: `${new Date().getSeconds()}1`,
+              description: "This is added",
+              significance: 5,
+            })
+          )
+        }
+      >
+        This button can add a new entry to the list
+      </button>
     </div>
   );
 };
